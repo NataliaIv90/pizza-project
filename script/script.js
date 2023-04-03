@@ -84,16 +84,12 @@ decreaseBtn.forEach(el => {
 themeBtn.addEventListener("click", toggleTheme);
 function toggleTheme() {
   this.classList.toggle("header__dayThemeIcon");
-  arr = ["header", "menu", "constructor", "review", "delivery", "footer"];
+  arr = ["header", "menu", "constructor", "review", "delivery", "footer", "review__title", "constructor__title", "menu__title", "footer__subscribeInput"];
   for (let i = 0; i < arr.length; i++) {
     document.querySelector(`.${arr[i]}`).classList.toggle("dark-theme");
   }
-
   document.body.classList.toggle("dark-bg");
-  document.querySelector(".constructor__title").classList.toggle("dark-theme");
-  document.querySelector(".menu__title").classList.toggle("dark-theme");
   document.querySelector(".footer__subscribeInput").classList.toggle("dark-bg");
-  document.querySelector(".footer__subscribeInput").classList.toggle("dark-theme");
   document.querySelectorAll(".menu__amount").forEach(el => {
     el.classList.toggle("dark-theme");
   })
@@ -125,7 +121,6 @@ function displayMenuDiv() {
       el.classList.remove("hidden");
     } else {
       el.classList.add("hidden");
-
     }
   })
   menuSelectAllBtn.classList.remove("hidden");

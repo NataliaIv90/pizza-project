@@ -1075,10 +1075,10 @@ body .dark-theme {
 }
 
 .dark-bg {
-  background-color: var(--darkBgColor)
+  background-color: var(--darkBgColor);
 }
 
-;
+
 
 .hidden {
   display: none;
