@@ -1,4 +1,4 @@
-
+import swal from 'sweetalert';
 
 const themeBtn = document.querySelector(".header__themeIcon"),
   menuTitles = document.querySelectorAll(".menu__itemTitle"),
@@ -21,6 +21,15 @@ const themeBtn = document.querySelector(".header__themeIcon"),
   priceItemVal = document.querySelectorAll(".constructor__selectedItemValue");
 let reviewCardVisibleIndex = 0,
   cart = [];
+
+document.getElementById("header__couponsPrompt").addEventListener("click", (e) => {
+  e.preventDefault();
+  swal({
+    button: {
+      text: "Hey ho!",
+    },
+  });
+})
 
 const menuBackgroundImages = {
   "Pizza Margarita": '01-margarita',
