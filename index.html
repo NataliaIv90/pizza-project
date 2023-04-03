@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Pizza project</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrapper ">
+      <div class="header__logoWrapper">
+        <a href="./index.html">
+          <img class="header__logo" src="./img/header/Little_Caesars_(5).png" alt="">
+        </a>
+      </div>
+      <div>
+        <ul class="header__nav">
+          <li class="header__navItem"><a class="header__navLink" href="">Home</a></li>
+          <li class="header__navItem"><a class="header__navLink" href="">Menu</a></li>
+          <li class="header__navItem"><a class="header__navLink" href="">Specials & Coupons</a></li>
+          <li class="header__navItem"><a class="header__navLink" href="">Contact us</a></li>
+        </ul>
+      </div>
+      <div class="header__iconWrapper">
+        <div>
+          <a href="">
+            <img class="header__icon" src="./img/header/shopping-cart-free-7-svgrepo-com.svg" alt="">
+          </a>
+        </div>
+        <div>
+          <a href=""><img class="header__icon" src="./img/header/phone-svgrepo-com.svg" alt=""></a>
+        </div>
+        <div class="header__themeIcon header__dayThemeIcon">
+          <!-- <img class="header__dayThemeIcon" src="./img/header/dark-mode-toggle-icon.png" alt=""> -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">It's not just a pizza, it's an <span
+            class="hero__title--brandFontColor">experience</span></h1>
+        <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta quos nesciunt illum
+          expedita incidunt.
+          Repudiandae voluptatum esse facilis obcaecati maxime. Voluptatem adipisci perferendis facere. Culpa quia at
+          qui vero dolores.</p>
+        <div class="hero__orderBtnContainer">
+          <a href="" class="hero__orderBtn">Order now</a>
+        </div>
+        <div class="hero__results">
+          <div class="hero__resultsItem">
+            <div class="hero__iconContainer"><img class="hero__icon" src="./img/hero/people-svgrepo-com.svg" alt="">
+            </div>
+            <div>
+              <p class="hero__resultsSubtitle">2000+</p>
+              <p>Customers</p>
+            </div>
+          </div>
+          <div class="hero__resultsItem">
+            <div class="hero__iconContainer"><img class="hero__icon" src="./img/hero/pizza-svgrepo-com.svg" alt="">
+            </div>
+            <div>
+              <p class="hero__resultsSubtitle">1500+</p>
+              <p>Delivery</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu -->
+
+    <div class="menu">
+      <p class="menu__text">our menu</p>
+      <h2 class="menu__title">Discover our menu</h2>
+      <div class="menu__nav">
+        <div class="menu__navItem selected" data-tag="menu__pizzaItem">pizza</div>
+        <div class="menu__navItem" data-tag="menu__grillItem">grill & seafood</div>
+        <div class="menu__navItem" data-tag="menu__drinkItem">drink</div>
+        <div class="menu__navItem" data-tag="menu__IceCreamItem">ice cream</div>
+      </div>
+
+      <div class="menu__items">
+        <div class="menu__item menu__pizzaItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/01-basil.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Pizza Margarita</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__pizzaSizeWrapper">
+              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize">40cm</div>
+              <div class="menu__pizzaSize">50cm</div>
+            </div>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item menu__pizzaItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/01-mediterrian.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Mediterrian Pizza</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__pizzaSizeWrapper">
+              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize">40cm</div>
+              <div class="menu__pizzaSize">50cm</div>
+            </div>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item menu__pizzaItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/01-olive.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Olive Pizza</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__pizzaSizeWrapper">
+              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize">40cm</div>
+              <div class="menu__pizzaSize">50cm</div>
+            </div>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item menu__pizzaItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/01-salami.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Salami Pizza</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__pizzaSizeWrapper">
+              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize">40cm</div>
+              <div class="menu__pizzaSize">50cm</div>
+            </div>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__grillItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/02-chichen.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Chicken with orange souce</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__grillItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/02-dumplings.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Meat dumplings</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__grillItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/02-nuggets.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Chicken nuggets</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__grillItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/02-soup.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Mediterrian soup</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__grillItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/02-steak.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Grilled steak</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__drinkItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/03-coffee.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Espresso</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__drinkItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/03-tea.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Black tea</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__drinkItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/03-margarita.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Margarita</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__drinkItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/03-mohito.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Mohito</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__IceCreamItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/04-1.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Forest Berry Ice cream</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__IceCreamItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/04-2.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Vanilla and Chocolate ice cream</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__IceCreamItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/04-3.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">All-in-one ice cream</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+        <div class="menu__item hidden menu__IceCreamItem">
+          <div class="menu__imgContainer">
+            <!-- <img src="./img/menu/04-4.png" alt=""> -->
+          </div>
+          <div class="menu__contenContainer">
+            <h4 class="menu__itemTitle">Chocolate ice cream</h4>
+            <p class="menu__itemDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi a
+              consectetur quibusdam sunt sit.
+            </p>
+            <div class="menu__priceContainer">
+              <div>$<span class="menu__price">20</span></div>
+              <div class="menu__selectAmountContainer">
+
+              </div>
+            </div>
+            <button class="menu__addToCartBtn">Add to cart</button>
+          </div>
+        </div>
+      </div>
+      <div class="menu__selectAllBtnContainer">
+        <div class="menu__selectAllBtn" data-tag="all">View all</div>
+      </div>
+    </div>
+
+    <div class="constructor">
+      <p class="constructor__text">custom pizza constructor</p>
+      <h2 class="constructor__title">Make custom pizza, choose ingredients you like</h2>
+      <div class="constructor__contentWrapper">
+        <div class="constructor__ingredientsContainer">
+
+          <form id="constructor__customPizza">
+            <div class="constructor__formContainer">
+              <div class="constructor__formItem">
+                <div class="constructor__formItemTitle">Pizza size</div>
+                <div class="form__inputContainer form__inputContainer--pizzaSize">
+                  <div>
+                    <input type="radio" name="constructor-size" data-name="01-30cm" class="constructor__pizzaSize"
+                      checked>
+                    <label for="constructor-size">30cm</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="constructor-size" data-name="01-40cm" class="constructor__pizzaSize">
+                    <label for="pesto">40cm</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="constructor-size" data-name="01-50cm" class="constructor__pizzaSize">
+                    <label for="tomato">50cm</label>
+                  </div>
+                </div>
+              </div>
+              <div class="constructor__formItem">
+                <div class="constructor__formItemTitle">Select the souce</div>
+                <div class="form__inputContainer">
+                  <div>
+                    <input type="radio" name="constructor-souce" data-name="02-bbq"
+                      class="constructor__pizzaSouce constructor__imgOption" checked>
+                    <label for="bbq">BBQ sauce</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="constructor-souce" data-name="02-pesto"
+                      class="constructor__pizzaSouce constructor__imgOption">
+                    <label for="pesto">Pesto sauce</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="constructor-souce" data-name="02-tomato"
+                      class="constructor__pizzaSouce constructor__imgOption">
+                    <label for="tomato">Tomato sauce</label>
+                  </div>
+                  <div>
+                    <input type="radio" name="constructor-souce" data-name="02-white"
+                      class="constructor__pizzaSouce constructor__imgOption">
+                    <label for="white">White sauce</label>
+                  </div>
+                </div>
+              </div>
+              <div class="constructor__formItem">
+                <div class="constructor__formItemTitle">Select the pizza topping</div>
+                <div class="form__inputContainer">
+                  <div>
+                    <input type="checkbox" name="bacon" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="03-bacon">
+                    <label for="bacon">Bacon</label>
+                  </div>
+
+                  <div>
+                    <input type="checkbox" name="salami" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="03-salami">
+                    <label for="salami">Salami</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="broccoli" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="04-broccoli">
+                    <label for="broccoli">Broccoli</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="mushrooms" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="04-mushrooms">
+                    <label for="mushrooms">Mushrooms</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="pineapples" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="04-pineapples">
+                    <label for="pineapples">Pineapples</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="tomatoes" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="04-tomatoes">
+                    <label for="tomatoes">Tomatoes</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="black-olives" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="06-black-olives">
+                    <label for="black-olives">Black olives</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="green-peppers" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="05-green-peppers">
+                    <label for="green-peppers">Green peppers</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="onions" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="05-onions">
+                    <label for="onions">Onions</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" name="spinach" class="constructor__pizzaIngred constructor__imgOption"
+                      data-name="06-spinach">
+                    <label for="spinach">Spinach</label>
+                  </div>
+                </div>
+              </div>
+              <div class="constructor__formTotal">
+                <div class="constructor__formItemTitle">Total:</div>
+                <ul class="constructor__formTotalBill">
+                  <li class="constructor__billItemSize">
+                    <div class="constructor__billItemName">Pizza size 30cm</div>
+                    <div>$<span class="constructor__selectedItemValue">6</span></div>
+                  </li>
+                  <li class="constructor__billItemSouce">
+                    <div class="constructor__billItemName">BBQ sauce</div>
+                    <div>$<span class="constructor__selectedItemValue">6</span></div>
+                  </li>
+                </ul>
+                <div class="constructor__totalPrice">
+                  $<span class="constructor__totalPriceValue">12</span>
+                </div>
+              </div>
+              <button type="submit" class="constructor__addToCartBtn">Add to cart</button>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="constructor__imgContainer">
+          <img class="constructor__img " src="./img/constructor/01-pizza-crust.png" alt="">
+          <img class="constructor__img " data-name="02-bbq" src="./img/constructor/02-bbq-sauce.png" alt="">
+          <img class="constructor__img hidden" data-name="02-pesto" src="./img/constructor/02-pesto-sauce.png" alt="">
+          <img class="constructor__img hidden" data-name="02-tomato" src="./img/constructor/02-tomato-sauce.png" alt="">
+          <img class="constructor__img hidden" data-name="02-white" src="./img/constructor/02-white-sauce.png" alt="">
+          <img class="constructor__img hidden" data-name="03-bacon" src="./img/constructor/03-bacon.png" alt="">
+          <img class="constructor__img hidden" data-name="03-salami" src="./img/constructor/03-salami.png" alt="">
+          <img class="constructor__img hidden" data-name="04-broccoli" src="./img/constructor/04-broccoli.png" alt="">
+          <img class="constructor__img hidden" data-name="04-mushrooms" src="./img/constructor/04-mushrooms.png" alt="">
+          <img class="constructor__img hidden" data-name="04-pineapples" src="./img/constructor/04-pineapples.png"
+            alt="">
+          <img class="constructor__img hidden" data-name="04-tomatoes" src="./img/constructor/04-tomatoes.png" alt="">
+          <img class="constructor__img hidden" data-name="05-green-peppers" src="./img/constructor/05-green-peppers.png"
+            alt="">
+          <img class="constructor__img hidden" data-name="05-onions" src="./img/constructor/05-onions.png" alt="">
+          <img class="constructor__img hidden" data-name="06-black-olives" src="./img/constructor/06-black-olives.png"
+            alt="">
+          <img class="constructor__img hidden" data-name="06-spinach" src="./img/constructor/06-spinach.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="about">
+      <div class="about__imgContainer">
+
+      </div>
+      <div>
+        <p class="about__text">about us</p>
+        <h2 class="about__title">this is our story</h2>
+        <p class="about__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus deserunt, est quod
+          blanditiis nobis velit et
+          eius ad cumque cum ut maxime laboriosam ratione voluptates quis, magnam atque amet rem. Lorem, ipsum dolor sit
+          amet consectetur adipisicing elit. Necessitatibus maxime temporibus cum aperiam neque quidem iste molestiae
+          quae officia consequatur impedit veritatis officiis vel repudiandae, recusandae tempora unde et rerum.</p>
+      </div>
+    </div>
+    <div class="review">
+      <div>
+        <h2 class="review__title">
+          what our customers say
+        </h2>
+        <p class="review__subtitle">we have 50 happy reviews</p>
+        <p class="review__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt et praesentium, eos
+          neque, perferendis
+          voluptate facere, laudantium rerum ea consequatur odio doloribus quibusdam? Sint molestiae quibusdam dolorum
+          rem repellendus cum?</p>
+      </div>
+      <div class="review__content">
+        <div>
+          <!-- slider -->
+          <img class="review__bracket" id="review__bracketLeft" src="./img/review/left.svg" alt="">
+        </div>
+        <div class="review__cards">
+
+        </div>
+        <div>
+          <!-- slider -->
+          <img class="review__bracket" id="review__bracketRight" src="./img/review/right.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="staff">
+      <div class="staff__content">
+        <p class="staff__subtitle">our chefs</p>
+        <h2 class="staff__title">meet our great chefs</h2>
+        <p class="staff__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi soluta, minima esse harum
+          amet magni
+          quidem unde
+          expedita quia ipsam eveniet nostrum enim saepe exercitationem similique iure! </p>
+      </div>
+      <div class="staff__cards">
+
+        <!-- js insert cards from reviewArr -->
+
+      </div>
+    </div>
+    <div class="delivery">
+      <div class="delivery__contentConteiner">
+        <div>
+          <h3 class="delivery__title">30 minutes, or pizza for free</h3>
+          <p>
+            If we can't deliver a pizza to you within 30 minutes we will give away one pizza from your order for free.
+          </p>
+        </div>
+        <div>
+          <h3 class="delivery__title">Delivery is valid for orders starting from $15</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Bamet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div>
+          <h3 class="delivery__title">$1000 maximum amount when paying in cash</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Bamet consectetur adipisicing elit.
+          </p>
+        </div>
+        <div>
+          <button class="delivery__orderBtn">Order now</button>
+        </div>
+      </div>
+      <div class="delivery__imgContainer"></div>
+    </div>
+    <div class="map">
+      <div>
+        <iframe class="map__iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d688.0840800152827!2d30.548155089303787!3d50.41888498705915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf6c10e25553%3A0xdc90246b7649e825!2sDomino&#39;s%20Pizza!5e0!3m2!1suk!2sua!4v1679839777240!5m2!1suk!2sua"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="map__adress">
+        <p>
+          Charlestown, NH Route 12
+        </p>
+        <p>603-826-3700</p>
+      </div>
+    </div>
+    <div class="reservation">
+      <div class="reservation__wrapper">
+        <h2 class="reservation__title">Reservation</h2>
+        <div class="reservation__contentContainer">
+          <div class="reservation__subtitle">Opening times</div>
+          <div class="reservation__text">Open 7 days a week</div>
+          <div>
+            <div class="reservation__workingHours">
+              <div>Week Days</div>
+              <div>10:30 am - 9:00 pm</div>
+            </div>
+            <div class="reservation__workingHours">
+              <div>Saturday</div>
+              <div>11:30 am - 10:30 pm</div>
+            </div>
+            <div class="reservation__workingHours">
+              <div>Sunday</div>
+              <div>11:30 am - 10:30 pm</div>
+            </div>
+          </div>
+          <div class="reservation__callToAction">Book your table for lunch or dinner</div>
+          <form action="" class="reservation__form">
+            <div class="reservation__formDiv">
+              <label for="">Name:</label>
+              <input class="reservation__input" type="text" name="" id="">
+            </div>
+            <div class="reservation__formDiv">
+              <label for="">E-mail:</label>
+              <input class="reservation__input" type="email" name="" id="">
+            </div>
+            <div class="reservation__formDiv reservation__formDiv--flex">
+              <label for="">People Number:</label>
+              <input class="reservation__input--flex" type="number" min="1" max="20" name="" id="">
+            </div>
+            <div class="reservation__formDiv reservation__formDiv--flex">
+              <label for="">Date & Time:</label>
+              <input class="reservation__input--flex" type="date" name="" id="">
+              <input class="reservation__input--flex" type="time" name="" id="">
+            </div>
+            <div class="reservation__bookBtnContainer"><button class="reservation__bookBtn">Book Now</button></div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer__logoWrapper">
+      <a href="./index.html">
+        <img class="footer__logo" src="./img/footer/Little_Caesars_(5).png" alt="">
+      </a>
+    </div>
+
+    <div class="footer__contentContainer">
+      <div>
+        <h3 class="footer__title">Menu</h3>
+        <ul class="footer__list">
+          <li>Pizza</li>
+          <li>Grill and Seafood</li>
+          <li>Drinks</li>
+          <li>Ice creams</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Restaurent</h3>
+        <ul class="footer__list">
+          <li>About us</li>
+          <li>Menu</li>
+          <li>Specials & Coupons</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Support</h3>
+        <ul class="footer__list">
+          <li>How to order</li>
+          <li>Where we deliver</li>
+          <li>FAQs</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Opening hours</h3>
+        <ul class="footer__list">
+          <li>Week Days: 10:30 am - 9:00 pm</li>
+          <li>Saturday: 11:30 am - 10:30 pm</li>
+          <li>Sunday: 11:30 am - 10:30 pm</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer__title">Newsletter</h3>
+        <form>
+          <div class="footer__subscribeFormContainer">
+            <input type="email" placeholder="Email" name="" id="" class="footer__subscribeInput">
+            <button type="button" class="footer__subscribeBtn">Join Us</button>
+          </div>
+        </form>
+        <div class="footer__socialMediaLinks">
+          <div>
+            <a class="footer__facebookLink" href="https://www.facebook.com/">
+              <img class="footer__socialMediaIcon" src="./img/footer/facebook-svgrepo-com.svg" alt="">
+            </a>
+          </div>
+          <div>
+            <a class="footer__instaLink" href="https://www.instagram.com/">
+              <img class="footer__socialMediaIcon" src="./img/footer/instagram-logo-facebook-svgrepo-com.svg" alt="">
+            </a>
+          </div>
+          <div>
+            <a class="footer__twitLink" href="https://twitter.com/">
+              <img class="footer__socialMediaIcon" src="./img/footer/twitter-round-svgrepo-com.svg" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__footer"> Little Caesars House of Pizza 2009</div>
+  </footer>
+
+  <script src="./script/script.js"></script>
+</body>
+
+</html>
