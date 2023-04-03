@@ -1099,3 +1099,139 @@ body .dark-theme {
 .flex-reverse {
   flex-direction: row-reverse;
 }
+
+@media screen and (max-width:900px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .header {
+    box-shadow: none;
+    height: auto;
+  }
+
+  .header__wrapper {
+    gap: 5px;
+    align-items: center;
+  }
+
+  .header__nav {
+    font-size: 0.8rem;
+  }
+
+  .header__logo {
+    height: 30px;
+  }
+
+  .header__icon {
+    width: 1.5rem;
+  }
+
+
+  .header__themeIcon {
+    width: 1.6rem;
+    height: 2rem;
+  }
+
+  .hero {
+    margin-top: 30px;
+    display: block;
+    height: auto;
+    padding: 5%;
+  }
+
+  .hero__content {
+    max-width: 95%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__title,
+  .menu__title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .hero__icon {
+    width: auto;
+    height: 1.2rem;
+  }
+
+  .menu__items {
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+
+  .constructor__imgContainer {
+    display: none;
+  }
+
+  .about {
+    display: block;
+    padding: 5%;
+    margin: 2%;
+  }
+
+  .about__imgContainer {
+    display: none;
+  }
+
+  .review {
+    display: block;
+    min-height: auto;
+  }
+
+  .review__content {
+    margin-top: 40px;
+  }
+
+  .review__cardText,
+  .review__cardTitle {
+    font-size: 1rem;
+  }
+
+  .staff__cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .delivery {
+    display: block;
+    padding: 5%;
+  }
+
+  .delivery__imgContainer {
+    display: none;
+  }
+
+  .map,
+  .footer__logoWrapper {
+    display: none;
+  }
+
+  .reservation__wrapper {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 7%;
+  }
+
+  .footer__socialNewsletter,
+  .footer__openingHours {
+    display: none;
+  }
+
+  .footer__contentContainer {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+}
