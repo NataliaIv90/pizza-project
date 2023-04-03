@@ -241,8 +241,10 @@ function submitCustomPizza(e) {
         <div>$<span class="constructor__selectedItemValue">6</span></div>
       </li>`
 
-  for (let i = 1; i < constrImagesSelector.length; i++) {
-    constrImagesSelector[i].classList.add("hidden");
+
+  constrImages[1].classList.remove("hidden");
+  for (let i = 2; i < constrImages.length; i++) {
+    constrImages[i].classList.add("hidden");
   }
   updateTotalPrice();
 }
