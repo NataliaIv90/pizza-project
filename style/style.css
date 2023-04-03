@@ -266,6 +266,9 @@ body .dark-theme {
   box-shadow: 2px 2px 10px lightgray;
   padding: 10%;
   transition: all 150ms;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu__item:hover {
