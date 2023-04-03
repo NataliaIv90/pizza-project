@@ -1,5 +1,3 @@
-import swal from 'sweetalert';
-
 const themeBtn = document.querySelector(".header__themeIcon"),
   menuTitles = document.querySelectorAll(".menu__itemTitle"),
   menuItems = document.querySelectorAll(".menu__item"),
@@ -24,11 +22,11 @@ let reviewCardVisibleIndex = 0,
 
 document.getElementById("header__couponsPrompt").addEventListener("click", (e) => {
   e.preventDefault();
-  swal({
-    button: {
-      text: "Hey ho!",
-    },
-  });
+  Swal.fire({
+    title: '-30% OFF!',
+    text: 'Enter "happy" in the cart and get -30% on your order',
+    confirmButtonText: 'Ok'
+  })
 })
 
 const menuBackgroundImages = {
@@ -86,6 +84,19 @@ decreaseBtn.forEach(el => {
 themeBtn.addEventListener("click", toggleTheme);
 function toggleTheme() {
   this.classList.toggle("header__dayThemeIcon");
+  arr = ["header", "menu", "constructor", "review", "delivery", "footer"];
+  for (let i = 0; i < arr.length; i++) {
+    document.querySelector(`.${arr[i]}`).classList.toggle("dark-theme");
+  }
+
+  document.body.classList.toggle("dark-bg");
+  document.querySelector(".constructor__title").classList.toggle("dark-theme");
+  document.querySelector(".menu__title").classList.toggle("dark-theme");
+  document.querySelector(".footer__subscribeInput").classList.toggle("dark-bg");
+  document.querySelector(".footer__subscribeInput").classList.toggle("dark-theme");
+  document.querySelectorAll(".menu__amount").forEach(el => {
+    el.classList.toggle("dark-theme");
+  })
 }
 
 menuTitles.forEach(el => {

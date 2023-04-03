@@ -7,9 +7,11 @@
   --border-color: lightgrey;
   --hover-border-color: grey;
   --brand-gradient: linear-gradient(36deg, rgba(255, 132, 0, 1) 0%, rgb(251, 178, 31) 90%);
+  --darkBgColor: rgb(37, 37, 37);
   --bold-font-family: "Quicksand bold";
   --regular-font-family: "Quicksand regular";
   font-family: var(--regular-font-family);
+  scroll-behavior: smooth;
 }
 
 @font-face {
@@ -24,6 +26,14 @@
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-font-color);
+}
+
+body .dark-theme {
+  background-color: var(--darkBgColor);
 }
 
 .header {
@@ -1059,6 +1069,16 @@
 }
 
 /* hidden and selected class */
+
+.dark-theme {
+  color: var(--light-font-color);
+}
+
+.dark-bg {
+  background-color: var(--darkBgColor)
+}
+
+;
 
 .hidden {
   display: none;

@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style/reset.css">
   <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./sweet-alert/sweetalert2.css">
   <title>Pizza project</title>
 </head>
 
-<body>
+<body class="body">
   <header class="header">
     <div class="header__wrapper ">
       <div class="header__logoWrapper">
@@ -20,11 +21,11 @@
       </div>
       <div>
         <ul class="header__nav">
-          <li class="header__navItem"><a class="header__navLink" href="">Home</a></li>
-          <li class="header__navItem"><a class="header__navLink" href="">Menu</a></li>
+          <li class="header__navItem"><a class="header__navLink" href="#main">Home</a></li>
+          <li class="header__navItem"><a class="header__navLink" href="#menu">Menu</a></li>
           <li class="header__navItem"><a class="header__navLink" href="" id="header__couponsPrompt">Specials &
               Coupons</a></li>
-          <li class="header__navItem"><a class="header__navLink" href="">Contact us</a></li>
+          <li class="header__navItem"><a class="header__navLink" href="#reservation">Contact us</a></li>
         </ul>
       </div>
       <div class="header__iconWrapper">
@@ -43,7 +44,7 @@
     </div>
   </header>
 
-  <main class="main">
+  <main class="main" id="main">
     <div class="hero">
       <div class="hero__content">
         <h1 class="hero__title">It's not just a pizza, it's an <span
@@ -79,7 +80,7 @@
 
     <!-- Menu -->
 
-    <div class="menu">
+    <div class="menu" id="menu">
       <p class="menu__text">our menu</p>
       <h2 class="menu__title">Discover our menu</h2>
       <div class="menu__nav">
@@ -667,7 +668,7 @@
         <p>603-826-3700</p>
       </div>
     </div>
-    <div class="reservation">
+    <div class="reservation" id="reservation">
       <div class="reservation__wrapper">
         <h2 class="reservation__title">Reservation</h2>
         <div class="reservation__contentContainer">
@@ -788,7 +789,9 @@
     <div class="footer__footer"> Little Caesars House of Pizza 2009</div>
   </footer>
 
+  <script src="./sweet-alert/sweet-alert.js"></script>
   <script src="./script/script.js"></script>
+
 </body>
 
 </html>
