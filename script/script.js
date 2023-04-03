@@ -1,9 +1,11 @@
 const themeBtn = document.querySelector(".header__themeIcon"),
   menuTitles = document.querySelectorAll(".menu__itemTitle"),
   menuItems = document.querySelectorAll(".menu__item"),
+  menuPizzaSize = document.querySelectorAll(".menu__pizzaSize"),
   menuSelectAllBtn = document.querySelector(".menu__selectAllBtn"),
   menuNavItems = document.querySelectorAll(".menu__navItem"),
   menuSelectAmountContainers = document.querySelectorAll(".menu__selectAmountContainer"),
+  menuAddToCartBtn = document.querySelectorAll(".menu__addToCartBtn"),
   reviewCards = document.querySelector(".review__cards"),
   reviewSliderLeftBtn = document.querySelector("#review__bracketLeft"),
   reviewSliderRightBtn = document.querySelector("#review__bracketRight"),
@@ -88,6 +90,12 @@ function toggleTheme() {
   for (let i = 0; i < arr.length; i++) {
     document.querySelector(`.${arr[i]}`).classList.toggle("dark-theme");
   }
+  document.querySelectorAll(".header__navLink").forEach(el => {
+    el.classList.toggle("dark-theme");
+  })
+  document.querySelectorAll(".menu__navItem").forEach(el => {
+    el.classList.toggle("dark-bg");
+  })
   document.body.classList.toggle("dark-bg");
   document.querySelector(".footer__subscribeInput").classList.toggle("dark-bg");
   document.querySelectorAll(".menu__amount").forEach(el => {
@@ -135,6 +143,46 @@ menuSelectAllBtn.addEventListener("click", () => {
     el.classList.remove("selected");
   })
 })
+
+// Ціна піцци в залежності від розміру коржа
+
+const pizzaPrice = {
+  "Pizza Margarita": [20, 25, 30],
+  "Mediterrian Pizza": [35, 45, 55],
+  "Olive Pizza": [23, 27, 31],
+  "Salami Pizza": [25, 30, 40]
+}
+
+menuPizzaSize.forEach(el => {
+  el.addEventListener("click", selectSize);
+})
+
+function selectSize() {
+  let e = this.parentElement.children;
+  for (let i = 0; i < e.length; i++) {
+    e[i].classList.remove("menu__pizzaSize--selected");
+  }
+  this.classList.add("menu__pizzaSize--selected");
+
+}
+
+// Додавання оварів в корзину у вкладці МЕНЮ
+
+menuAddToCartBtn.forEach(el => { el.addEventListener("click", addItemToCart); })
+
+function addItemToCart() {
+  let elPrice;
+  if (this.parentElement.parentElement.classList.contains("menu__pizzaItem")) {
+    console.log("Pizzza");
+
+  } else {
+    elPrice = this.previousElementSibling.firstElementChild.lastElementChild.innerText;
+    let el = [this.parentElement.firstElementChild.innerText, elPrice, this.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling.innerText]
+    cart.push(el);
+    console.table(cart);
+    console.log("Not pizza");
+  }
+}
 
 // Конструктор піцци
 const constructorElPrice = {
@@ -244,6 +292,8 @@ function submitCustomPizza(e) {
   console.log(ingredients);
   let customPizza = [ingredients, document.querySelector(".constructor__totalPriceValue").innerText, 1];
   cart.push(customPizza);
+
+  console.table(cart);
   customPizzaForm.reset();
 
   constructorBillValue.innerHTML = ` 
