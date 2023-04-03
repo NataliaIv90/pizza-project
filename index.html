@@ -54,7 +54,7 @@
           Repudiandae voluptatum esse facilis obcaecati maxime. Voluptatem adipisci perferendis facere. Culpa quia at
           qui vero dolores.</p>
         <div class="hero__orderBtnContainer">
-          <a href="" class="hero__orderBtn">Order now</a>
+          <a href="#main" class="hero__orderBtn">Order now</a>
         </div>
         <div class="hero__results">
           <div class="hero__resultsItem">
@@ -424,7 +424,7 @@
       </div>
     </div>
 
-    <div class="constructor">
+    <div class="constructor" id="constructor">
       <p class="constructor__text">custom pizza constructor</p>
       <h2 class="constructor__title">Make custom pizza, choose ingredients you like</h2>
       <div class="constructor__contentWrapper">
@@ -436,17 +436,17 @@
                 <div class="constructor__formItemTitle">Pizza size</div>
                 <div class="form__inputContainer form__inputContainer--pizzaSize">
                   <div>
-                    <input type="radio" name="constructor-size" data-name="01-30cm" class="constructor__pizzaSize"
+                    <input type="radio" id="constructor-size30" data-name="01-30cm" class="constructor__pizzaSize"
                       checked>
-                    <label for="constructor-size">30cm</label>
+                    <label for="constructor-size30">30cm</label>
                   </div>
                   <div>
-                    <input type="radio" name="constructor-size" data-name="01-40cm" class="constructor__pizzaSize">
-                    <label for="pesto">40cm</label>
+                    <input type="radio" id="constructor-size40" data-name="01-40cm" class="constructor__pizzaSize">
+                    <label for="constructor-size40">40cm</label>
                   </div>
                   <div>
-                    <input type="radio" name="constructor-size" data-name="01-50cm" class="constructor__pizzaSize">
-                    <label for="tomato">50cm</label>
+                    <input type="radio" id="constructor-size50" data-name="01-50cm" class="constructor__pizzaSize">
+                    <label for="constructor-size50">50cm</label>
                   </div>
                 </div>
               </div>
@@ -454,24 +454,24 @@
                 <div class="constructor__formItemTitle">Select the souce</div>
                 <div class="form__inputContainer">
                   <div>
-                    <input type="radio" name="constructor-souce" data-name="02-bbq"
+                    <input type="radio" id="constructor-souceBBQ" data-name="02-bbq"
                       class="constructor__pizzaSouce constructor__imgOption" checked>
-                    <label for="bbq">BBQ sauce</label>
+                    <label for="constructor-souceBBQ">BBQ sauce</label>
                   </div>
                   <div>
-                    <input type="radio" name="constructor-souce" data-name="02-pesto"
+                    <input type="radio" id="constructor-soucePesto" data-name="02-pesto"
                       class="constructor__pizzaSouce constructor__imgOption">
-                    <label for="pesto">Pesto sauce</label>
+                    <label for="constructor-soucePesto">Pesto sauce</label>
                   </div>
                   <div>
-                    <input type="radio" name="constructor-souce" data-name="02-tomato"
+                    <input type="radio" id="constructor-souceTomato" data-name="02-tomato"
                       class="constructor__pizzaSouce constructor__imgOption">
-                    <label for="tomato">Tomato sauce</label>
+                    <label for="constructor-souceTomato">Tomato sauce</label>
                   </div>
                   <div>
-                    <input type="radio" name="constructor-souce" data-name="02-white"
+                    <input type="radio" id="constructor-whiteSouce" data-name="02-white"
                       class="constructor__pizzaSouce constructor__imgOption">
-                    <label for="white">White sauce</label>
+                    <label for="constructor-whiteSouce">White sauce</label>
                   </div>
                 </div>
               </div>
@@ -479,53 +479,53 @@
                 <div class="constructor__formItemTitle">Select the pizza topping</div>
                 <div class="form__inputContainer">
                   <div>
-                    <input type="checkbox" name="bacon" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="bacon" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="03-bacon">
                     <label for="bacon">Bacon</label>
                   </div>
 
                   <div>
-                    <input type="checkbox" name="salami" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="salami" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="03-salami">
                     <label for="salami">Salami</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="broccoli" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="broccoli" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="04-broccoli">
                     <label for="broccoli">Broccoli</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="mushrooms" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="mushrooms" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="04-mushrooms">
                     <label for="mushrooms">Mushrooms</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="pineapples" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="pineapples" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="04-pineapples">
                     <label for="pineapples">Pineapples</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="tomatoes" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="tomatoes" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="04-tomatoes">
                     <label for="tomatoes">Tomatoes</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="black-olives" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="black-olives" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="06-black-olives">
                     <label for="black-olives">Black olives</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="green-peppers" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="green-peppers" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="05-green-peppers">
                     <label for="green-peppers">Green peppers</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="onions" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="onions" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="05-onions">
                     <label for="onions">Onions</label>
                   </div>
                   <div>
-                    <input type="checkbox" name="spinach" class="constructor__pizzaIngred constructor__imgOption"
+                    <input type="checkbox" id="spinach" class="constructor__pizzaIngred constructor__imgOption"
                       data-name="06-spinach">
                     <label for="spinach">Spinach</label>
                   </div>
@@ -689,23 +689,23 @@
             </div>
           </div>
           <div class="reservation__callToAction">Book your table for lunch or dinner</div>
-          <form action="" class="reservation__form">
+          <form class="reservation__form">
             <div class="reservation__formDiv">
-              <label for="">Name:</label>
-              <input class="reservation__input" type="text" name="" id="">
+              <label for="reserv-form-name">Name:</label>
+              <input class="reservation__input" type="text" id="reserv-form-name">
             </div>
             <div class="reservation__formDiv">
-              <label for="">E-mail:</label>
-              <input class="reservation__input" type="email" name="" id="">
+              <label for="reserv-form-email">E-mail:</label>
+              <input class="reservation__input" type="email" id="reserv-form-email">
             </div>
             <div class="reservation__formDiv reservation__formDiv--flex">
-              <label for="">People Number:</label>
-              <input class="reservation__input--flex" type="number" min="1" max="20" name="" id="">
+              <label for="reserv-form-peopleNum">People Number:</label>
+              <input class="reservation__input--flex" type="number" min="1" max="20" id="reserv-form-peopleNum">
             </div>
             <div class="reservation__formDiv reservation__formDiv--flex">
-              <label for="">Date & Time:</label>
-              <input class="reservation__input--flex" type="date" name="" id="">
-              <input class="reservation__input--flex" type="time" name="" id="">
+              <label for="reserv-form-date">Date & Time:</label>
+              <input class="reservation__input--flex" type="date" id="reserv-form-date">
+              <input class="reservation__input--flex" type="time" id="reserv-form-time">
             </div>
             <div class="reservation__bookBtnContainer"><button class="reservation__bookBtn">Book Now</button></div>
           </form>
@@ -762,7 +762,7 @@
         <h3 class="footer__title">Newsletter</h3>
         <form>
           <div class="footer__subscribeFormContainer">
-            <input type="email" placeholder="Email" name="" id="" class="footer__subscribeInput">
+            <input type="email" placeholder="Email" name="footer-emailInp" class="footer__subscribeInput">
             <button type="button" class="footer__subscribeBtn">Join Us</button>
           </div>
         </form>
