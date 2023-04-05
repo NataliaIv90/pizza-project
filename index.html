@@ -746,22 +746,24 @@
           <form class="reservation__form">
             <div class="reservation__formDiv">
               <label for="reserv-form-name">Name:</label>
-              <input class="reservation__input" type="text" id="reserv-form-name">
+              <input class="reservation__input" type="text" id="reserv-form-name" required>
             </div>
             <div class="reservation__formDiv">
               <label for="reserv-form-email">E-mail:</label>
-              <input class="reservation__input" type="email" id="reserv-form-email">
+              <input class="reservation__input" type="email" id="reserv-form-email" required>
             </div>
             <div class="reservation__formDiv reservation__formDiv--flex">
               <label for="reserv-form-peopleNum">People Number:</label>
-              <input class="reservation__input--flex" type="number" min="1" max="20" id="reserv-form-peopleNum">
+              <input class="reservation__input--flex" type="number" min="1" max="20" id="reserv-form-peopleNum"
+                required>
             </div>
             <div class="reservation__formDiv reservation__formDiv--flex">
               <label for="reserv-form-date">Date & Time:</label>
-              <input class="reservation__input--flex" type="date" id="reserv-form-date">
-              <input class="reservation__input--flex" type="time" id="reserv-form-time">
+              <input class="reservation__input--flex" type="date" id="reserv-form-date" required>
+              <input class="reservation__input--flex" type="time" id="reserv-form-time" required>
             </div>
-            <div class="reservation__bookBtnContainer"><button class="reservation__bookBtn">Book Now</button></div>
+            <div class="reservation__bookBtnContainer"><button class="reservation__bookBtn" type="submit">Book
+                Now</button></div>
           </form>
 
         </div>

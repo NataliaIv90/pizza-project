@@ -34,7 +34,7 @@ document.getElementById("header__couponsPrompt").addEventListener("click", (e) =
     title: '-30% OFF!',
     text: 'Enter "happy" in the cart and get -30% on your order',
     confirmButtonText: 'Ok'
-  })
+  });
 })
 
 headerCartLink.addEventListener("click", (e) => {
@@ -628,3 +628,10 @@ for (let i = 0; i < staffArr.length; i++) {
   div.style.backgroundImage = `url(${staffArr[i].img})`
   staffCards.insertAdjacentElement("beforeend", div);
 }
+
+document.querySelector(".reservation__form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  Swal.fire({
+    title: 'We received your booking. Thank you for chosing us!'
+  });
+})
