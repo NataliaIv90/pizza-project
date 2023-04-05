@@ -123,7 +123,9 @@ body .dark-theme {
 }
 
 .header__cart {
-  /* width: 800px; */
+  max-width: 95%;
+  box-sizing: border-box;
+  overflow: auto;
   height: auto;
   background: white;
   border: 1px solid var(--border-color);
