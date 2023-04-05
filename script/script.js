@@ -1,4 +1,9 @@
 const themeBtn = document.querySelector(".header__themeIcon"),
+  headerCartLink = document.querySelector("#header__cartLink"),
+  headerCartDiv = document.querySelector(".header__cart"),
+  headerCartList = document.querySelector(".header__cartList"),
+  cartConfirmBtn = document.querySelector(".header__cartConfirmBtn"),
+  cartTotal = document.querySelector(".header__cartTotal"),
   menuTitles = document.querySelectorAll(".menu__itemTitle"),
   menuItems = document.querySelectorAll(".menu__item"),
   menuPizzaSize = document.querySelectorAll(".menu__pizzaSize"),
@@ -20,7 +25,8 @@ const themeBtn = document.querySelector(".header__themeIcon"),
   customPizzaFormBtn = document.querySelector(".constructor__addToCartBtn"),
   priceItemVal = document.querySelectorAll(".constructor__selectedItemValue");
 let reviewCardVisibleIndex = 0,
-  cart = [];
+  cart = [],
+  promoApplied = false;
 
 document.getElementById("header__couponsPrompt").addEventListener("click", (e) => {
   e.preventDefault();
@@ -29,6 +35,104 @@ document.getElementById("header__couponsPrompt").addEventListener("click", (e) =
     text: 'Enter "happy" in the cart and get -30% on your order',
     confirmButtonText: 'Ok'
   })
+})
+
+headerCartLink.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  headerCartDiv.classList.toggle("header__cart--hidden");
+});
+
+headerCartDiv.addEventListener("click", (e) => {
+  e.stopPropagation();
+})
+
+function updateCart() {
+  promoApplied = false;
+  headerCartList.innerHTML = `        
+  <li class="header__cartListItem">
+    <div> Product</div>
+    <div>Quantity</div>
+    <div>Price</div>
+    <div>Total</div>
+  </li > `
+
+  cart.forEach((el, index) => {
+    let li = document.createElement("li");
+    li.key = index;
+    console.log(parseInt(el[1]) * parseInt(el[2]), el[1], el[2]);
+    li.classList.add("header__cartListItem");
+    li.innerHTML = `     
+      <div class="cart__productName">${el[0]}</div>
+      <div class="cart__productQuantity">${el[2]}</div>
+      <div>$<span class="cart__productSum">${el[1]}</span></div>
+       <div>$<span class="cart__productSumTotal">${el[1] * el[2]}</span></div>`;
+    headerCartList.insertAdjacentElement("beforeend", li);
+  })
+
+  document.querySelectorAll(".header__cartListItem").forEach((el, index) => {
+    if (index > 0) {
+      let closeBtn = document.createElement("div");
+      closeBtn.classList.add("cart__closeBtn");
+      closeBtn.innerText = "X";
+      closeBtn.addEventListener("click", removeEl);
+      el.insertAdjacentElement("beforeend", closeBtn);
+    }
+  })
+
+  updateCartTotalSum();
+  if (cart.length > 0) {
+    cartConfirmBtn.classList.remove("hidden");
+  } else {
+    cartConfirmBtn.classList.add("hidden");
+  }
+}
+
+cartConfirmBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  cart = [];
+  updateCart();
+  Swal.fire({
+    title: 'Thank you for your order!'
+  })
+})
+
+function updateCartTotalSum() {
+  let sum = 0;
+  document.querySelectorAll(".cart__productSumTotal").forEach(el => {
+    sum += el.innerText * 1;
+  })
+  cartTotal.innerHTML = sum.toFixed(2);
+}
+
+function removeEl() {
+  cart.splice(this.parentElement.key, 1);
+  this.parentElement.remove();
+
+  if (cart.length < 1) {
+    cartTotal.innerText = 0;
+  } else {
+    updateCartTotalSum();
+    promoApplied = false;
+  }
+}
+
+document.body.addEventListener("click", () => {
+  headerCartDiv.classList.add("header__cart--hidden");
+})
+
+document.querySelector(".cart__promoInpForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!promoApplied) {
+    let promoCode = document.querySelector("#cart__promoInp");
+    if (promoCode.value === "happy") {
+      cartTotal.innerText = cartTotal.innerText * 0.7;
+    } else {
+      alert("There is no such promo code now");
+    }
+    promoApplied = true;
+  }
+
 })
 
 const menuBackgroundImages = {
@@ -163,7 +267,20 @@ function selectSize() {
     e[i].classList.remove("menu__pizzaSize--selected");
   }
   this.classList.add("menu__pizzaSize--selected");
-
+  const priceDiv = this.parentElement.nextElementSibling.firstElementChild.lastElementChild;
+  const pizzaName = this.parentElement.parentElement.firstElementChild.innerText;
+  console.log(priceDiv, pizzaName);
+  switch (this.innerText) {
+    case "30cm":
+      priceDiv.innerText = pizzaPrice[pizzaName][0];
+      break;
+    case "40cm":
+      priceDiv.innerText = pizzaPrice[pizzaName][1];
+      break;
+    case "50cm":
+      priceDiv.innerText = pizzaPrice[pizzaName][2];
+      break;
+  }
 }
 
 // Додавання оварів в корзину у вкладці МЕНЮ
@@ -172,16 +289,12 @@ menuAddToCartBtn.forEach(el => { el.addEventListener("click", addItemToCart); })
 
 function addItemToCart() {
   let elPrice;
-  if (this.parentElement.parentElement.classList.contains("menu__pizzaItem")) {
-    console.log("Pizzza");
-
-  } else {
-    elPrice = this.previousElementSibling.firstElementChild.lastElementChild.innerText;
-    let el = [this.parentElement.firstElementChild.innerText, elPrice, this.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling.innerText]
-    cart.push(el);
-    console.table(cart);
-    console.log("Not pizza");
-  }
+  elPrice = this.previousElementSibling.firstElementChild.lastElementChild.innerText;
+  let el = [this.parentElement.firstElementChild.innerText, elPrice, this.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling.innerText]
+  cart.push(el);
+  console.table(cart);
+  console.log("Not pizza");
+  updateCart();
 }
 
 // Конструктор піцци
@@ -292,6 +405,7 @@ function submitCustomPizza(e) {
   console.log(ingredients);
   let customPizza = [ingredients, document.querySelector(".constructor__totalPriceValue").innerText, 1];
   cart.push(customPizza);
+  updateCart();
 
   console.table(cart);
   customPizzaForm.reset();

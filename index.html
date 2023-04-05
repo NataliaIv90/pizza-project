@@ -30,19 +30,41 @@
       </div>
       <div class="header__iconWrapper">
         <div>
-          <a href="">
+          <a href="/" id="header__cartLink">
             <img class="header__icon" src="./img/header/shopping-cart-free-7-svgrepo-com.svg" alt="">
           </a>
         </div>
         <div>
-          <a href=""><img class="header__icon" src="./img/header/phone-svgrepo-com.svg" alt=""></a>
+          <a href="tel:123456789" id="header__phoneLink"><img class="header__icon"
+              src="./img/header/phone-svgrepo-com.svg" alt=""></a>
         </div>
         <div class="header__themeIcon header__dayThemeIcon">
           <!-- <img class="header__dayThemeIcon" src="./img/header/dark-mode-toggle-icon.png" alt=""> -->
         </div>
       </div>
     </div>
+
   </header>
+
+  <div class="header__cart header__cart--hidden">
+    <ul class="header__cartList">
+      <li class="header__cartListItem">
+        <div>Product</div>
+        <div>Quantity</div>
+        <div>Price</div>
+        <div>Total</div>
+      </li>
+    </ul>
+    <div class="header__cartTotalWrapper">
+      <div>Total</div>
+      <div>$<span class="header__cartTotal">0</span></div>
+    </div>
+    <form class="cart__promoInpForm">
+      <input type="text" id="cart__promoInp" autocomplete="off" placeholder="Enter promo">
+      <button type="submit">Apply</button>
+    </form>
+    <div><button type="button" class="header__cartConfirmBtn hidden">Confirm order</button> </div>
+  </div>
 
   <main class="main" id="main">
     <div class="hero">
@@ -100,7 +122,7 @@
               consectetur quibusdam sunt sit.
             </p>
             <div class="menu__pizzaSizeWrapper">
-              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize menu__pizzaSize--selected">30cm</div>
               <div class="menu__pizzaSize">40cm</div>
               <div class="menu__pizzaSize">50cm</div>
             </div>
@@ -124,7 +146,7 @@
               consectetur quibusdam sunt sit.
             </p>
             <div class="menu__pizzaSizeWrapper">
-              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize menu__pizzaSize--selected">30cm</div>
               <div class="menu__pizzaSize">40cm</div>
               <div class="menu__pizzaSize">50cm</div>
             </div>
@@ -149,7 +171,7 @@
               consectetur quibusdam sunt sit.
             </p>
             <div class="menu__pizzaSizeWrapper">
-              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize menu__pizzaSize--selected">30cm</div>
               <div class="menu__pizzaSize">40cm</div>
               <div class="menu__pizzaSize">50cm</div>
             </div>
@@ -174,7 +196,7 @@
               consectetur quibusdam sunt sit.
             </p>
             <div class="menu__pizzaSizeWrapper">
-              <div class="menu__pizzaSize">30cm</div>
+              <div class="menu__pizzaSize menu__pizzaSize--selected">30cm</div>
               <div class="menu__pizzaSize">40cm</div>
               <div class="menu__pizzaSize">50cm</div>
             </div>
