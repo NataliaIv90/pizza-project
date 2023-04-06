@@ -69,6 +69,8 @@ body .dark-theme {
 .header__nav {
   display: flex;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 15px;
 }
 
@@ -1340,6 +1342,10 @@ body .dark-theme {
 }
 
 @media screen and (max-width:550px) {
+
+  .header__navHomeLink {
+    display: none;
+  }
 
   .header__cartListItem {
     font-size: 0.8rem;
