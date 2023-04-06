@@ -137,6 +137,7 @@ body .dark-theme {
   right: 3%;
   transition: all 0.2s;
   padding: 20px;
+
 }
 
 .header__cart--hidden {
@@ -556,6 +557,7 @@ body .dark-theme {
 
 .constructor__formTotal,
 .constructor__totalPrice {
+  box-sizing: border-box;
   width: 100%;
   padding-top: 10px;
   border-top: 1px solid var(--border-color);
@@ -1257,8 +1259,22 @@ body .dark-theme {
     gap: 5px;
   }
 
+  .constructor {
+    padding: 10px;
+  }
+
   .constructor__imgContainer {
     display: none;
+  }
+
+  .constructor__formTotal {
+    max-width: 90%;
+  }
+
+  .constructor__contentWrapper {
+    justify-content: center;
+    align-items: center;
+    gap: 0;
   }
 
   .about {
@@ -1320,5 +1336,35 @@ body .dark-theme {
   .footer__contentContainer {
     margin-top: 10px;
     font-size: 1rem;
+  }
+}
+
+@media screen and (max-width:550px) {
+
+  .header__cartListItem {
+    font-size: 0.8rem;
+    gap: 5px;
+    grid-template-columns: 100px 40px 40px 40px 20px;
+  }
+
+  .menu__items {
+    grid-template-columns: 1fr;
+  }
+
+  .menu__itemDescription {
+    display: none;
+  }
+
+  .constructor__contentWrapper {
+    display: block;
+    padding-left: 5%;
+  }
+
+  .constructor__formContainer {
+    display: block;
+  }
+
+  .form__inputContainer {
+    display: block;
   }
 }
