@@ -2,7 +2,10 @@ const themeBtn = document.querySelector(".header__themeIcon"),
   headerCartLink = document.querySelector("#header__cartLink"),
   headerCartDiv = document.querySelector(".header__cart"),
   headerCartList = document.querySelector(".header__cartList"),
+  cartFull = document.querySelector(".header__cartFull"),
+  cartEmpty = document.querySelector(".header__cartEmpty"),
   cartConfirmBtn = document.querySelector(".header__cartConfirmBtn"),
+  cartItemNum = document.querySelector(".header__cartItemsNum"),
   cartTotal = document.querySelector(".header__cartTotal"),
   menuTitles = document.querySelectorAll(".menu__itemTitle"),
   menuItems = document.querySelectorAll(".menu__item"),
@@ -48,8 +51,13 @@ headerCartDiv.addEventListener("click", (e) => {
 })
 
 function updateCart() {
-  promoApplied = false;
-  headerCartList.innerHTML = `        
+
+  if (cart.length > 0) {
+    cartFull.classList.remove("hidden");
+    cartEmpty.classList.add("hidden");
+    // cartConfirmBtn.classList.remove("hidden");
+    promoApplied = false;
+    headerCartList.innerHTML = `        
   <li class="header__cartListItem">
     <div> Product</div>
     <div>Quantity</div>
@@ -57,35 +65,37 @@ function updateCart() {
     <div>Total</div>
   </li > `
 
-  cart.forEach((el, index) => {
-    let li = document.createElement("li");
-    li.key = index;
-    console.log(parseInt(el[1]) * parseInt(el[2]), el[1], el[2]);
-    li.classList.add("header__cartListItem");
-    li.innerHTML = `     
+    cart.forEach((el, index) => {
+      let li = document.createElement("li");
+      li.key = index;
+      console.log(parseInt(el[1]) * parseInt(el[2]), el[1], el[2]);
+      li.classList.add("header__cartListItem");
+      li.innerHTML = `     
       <div class="cart__productName">${el[0]}</div>
       <div class="cart__productQuantity">${el[2]}</div>
       <div>$<span class="cart__productSum">${el[1]}</span></div>
        <div>$<span class="cart__productSumTotal">${el[1] * el[2]}</span></div>`;
-    headerCartList.insertAdjacentElement("beforeend", li);
-  })
+      headerCartList.insertAdjacentElement("beforeend", li);
+    })
 
-  document.querySelectorAll(".header__cartListItem").forEach((el, index) => {
-    if (index > 0) {
-      let closeBtn = document.createElement("div");
-      closeBtn.classList.add("cart__closeBtn");
-      closeBtn.innerText = "X";
-      closeBtn.addEventListener("click", removeEl);
-      el.insertAdjacentElement("beforeend", closeBtn);
-    }
-  })
-
-  updateCartTotalSum();
-  if (cart.length > 0) {
-    cartConfirmBtn.classList.remove("hidden");
+    document.querySelectorAll(".header__cartListItem").forEach((el, index) => {
+      if (index > 0) {
+        let closeBtn = document.createElement("div");
+        closeBtn.classList.add("cart__closeBtn");
+        closeBtn.innerText = "X";
+        closeBtn.addEventListener("click", removeEl);
+        el.insertAdjacentElement("beforeend", closeBtn);
+      }
+    })
   } else {
-    cartConfirmBtn.classList.add("hidden");
+
+    cartFull.classList.add("hidden");
+    cartEmpty.classList.remove("hidden");
+    // headerCartList.classList.add("hidden");
+    // cartConfirmBtn.classList.add("hidden");
   }
+  updateCartNum();
+  updateCartTotalSum();
 }
 
 cartConfirmBtn.addEventListener("click", (e) => {
@@ -98,6 +108,7 @@ cartConfirmBtn.addEventListener("click", (e) => {
 })
 
 function updateCartTotalSum() {
+  updateCartNum();
   let sum = 0;
   document.querySelectorAll(".cart__productSumTotal").forEach(el => {
     sum += el.innerText * 1;
@@ -105,16 +116,22 @@ function updateCartTotalSum() {
   cartTotal.innerHTML = sum.toFixed(2);
 }
 
+function updateCartNum() {
+  let sum = 0;
+  cart.forEach(el => {
+    sum += parseInt(el[2]);
+  })
+  cartItemNum.innerText = sum;
+  sum > 0 ? cartItemNum.classList.remove("hidden") : cartItemNum.classList.add("hidden");
+}
+
 function removeEl() {
   cart.splice(this.parentElement.key, 1);
   this.parentElement.remove();
-
-  if (cart.length < 1) {
-    cartTotal.innerText = 0;
-  } else {
-    updateCartTotalSum();
-    promoApplied = false;
-  }
+  console.log(cart);
+  updateCartNum();
+  updateCart();
+  promoApplied = false;
 }
 
 document.body.addEventListener("click", () => {
@@ -126,7 +143,7 @@ document.querySelector(".cart__promoInpForm").addEventListener("submit", (e) => 
   if (!promoApplied) {
     let promoCode = document.querySelector("#cart__promoInp");
     if (promoCode.value === "happy") {
-      cartTotal.innerText = cartTotal.innerText * 0.7;
+      cartTotal.innerText = (cartTotal.innerText * 0.7).toFixed(2);
     } else {
       alert("There is no such promo code now");
     }
@@ -289,12 +306,22 @@ menuAddToCartBtn.forEach(el => { el.addEventListener("click", addItemToCart); })
 
 function addItemToCart() {
   let elPrice;
+  let elName = this.parentElement.firstElementChild.innerText;
+  let name;
   elPrice = this.previousElementSibling.firstElementChild.lastElementChild.innerText;
-  let el = [this.parentElement.firstElementChild.innerText, elPrice, this.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling.innerText]
+  if (elName.includes("Pizza") && !elName.includes("Custom")) {
+    for (let i = 0; i < 3; i++) {
+      if (pizzaPrice[elName][i] == elPrice) {
+        i == 0 ? name = `${elName} 30cm` : i == 1 ? name = `${elName} 40cm` : name = `${elName} 50cm`;
+      }
+    }
+    elName = name;
+  }
+  let el = [elName, elPrice, this.previousElementSibling.lastElementChild.firstElementChild.nextElementSibling.innerText]
   cart.push(el);
   console.table(cart);
-  console.log("Not pizza");
   updateCart();
+
 }
 
 // Конструктор піцци

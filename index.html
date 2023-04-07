@@ -29,10 +29,11 @@
         </ul>
       </div>
       <div class="header__iconWrapper">
-        <div>
+        <div class="header__cartIconContainer">
           <a href="/" id="header__cartLink">
             <img class="header__icon" src="./img/header/shopping-cart-free-7-svgrepo-com.svg" alt="">
           </a>
+          <div class="header__cartItemsNum hidden">14</div>
         </div>
         <div>
           <a href="tel:123456789" id="header__phoneLink"><img class="header__icon"
@@ -47,23 +48,29 @@
   </header>
 
   <div class="header__cart header__cart--hidden">
-    <ul class="header__cartList">
-      <li class="header__cartListItem">
-        <div>Product</div>
-        <div>Quantity</div>
-        <div>Price</div>
+    <div class="header__cartFull hidden">
+      <ul class="header__cartList">
+        <li class="header__cartListItem">
+          <div>Product</div>
+          <div>Quantity</div>
+          <div>Price</div>
+          <div>Total</div>
+        </li>
+      </ul>
+      <div class="header__cartTotalWrapper">
         <div>Total</div>
-      </li>
-    </ul>
-    <div class="header__cartTotalWrapper">
-      <div>Total</div>
-      <div>$<span class="header__cartTotal">0</span></div>
+        <div>$<span class="header__cartTotal">0</span></div>
+      </div>
+      <form class="cart__promoInpForm">
+        <input type="text" id="cart__promoInp" autocomplete="off" placeholder="Enter promo">
+        <button type="submit">Apply</button>
+      </form>
+      <div><button type="button" class="header__cartConfirmBtn hidden">Confirm order</button> </div>
     </div>
-    <form class="cart__promoInpForm">
-      <input type="text" id="cart__promoInp" autocomplete="off" placeholder="Enter promo">
-      <button type="submit">Apply</button>
-    </form>
-    <div><button type="button" class="header__cartConfirmBtn hidden">Confirm order</button> </div>
+    <div class="header__cartEmpty">
+      <img class="header__emptyCartImg" src="./img/header/sad-pizza.jpg" alt="">
+      <div>There are no any items in the cart...</div>
+    </div>
   </div>
 
   <main class="main" id="main">
