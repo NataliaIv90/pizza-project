@@ -65,7 +65,7 @@
         <input type="text" id="cart__promoInp" autocomplete="off" placeholder="Enter promo">
         <button type="submit">Apply</button>
       </form>
-      <div><button type="button" class="header__cartConfirmBtn hidden">Confirm order</button> </div>
+      <div><button type="button" class="header__cartConfirmBtn">Confirm order</button> </div>
     </div>
     <div class="header__cartEmpty">
       <img class="header__emptyCartImg" src="./img/header/sad-pizza.jpg" alt="">
@@ -496,101 +496,105 @@
               <div class="constructor__formItem">
                 <div class="constructor__formItemTitle">Pizza size</div>
                 <div class="form__inputContainer form__inputContainer--pizzaSize">
-                  <div>
-                    <input type="radio" name="constructor__pizzaSize" id="constructor-size30" data-name="01-30cm"
-                      class="constructor__pizzaSize" checked>
-                    <label for="constructor-size30">30cm</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSize" data-type="constructor__customCheckbox"
+                      id="constructor-size30" data-name="01-30cm" class="constructor__pizzaSize" checked>
+                    <label data-type="constructor__customInpLabel" for="constructor-size30">30cm</label>
                   </div>
-                  <div>
-                    <input type="radio" name="constructor__pizzaSize" id="constructor-size40" data-name="01-40cm"
-                      class="constructor__pizzaSize">
-                    <label for="constructor-size40">40cm</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSize" data-type="constructor__customCheckbox"
+                      id="constructor-size40" data-name="01-40cm" class="constructor__pizzaSize">
+                    <label data-type="constructor__customInpLabel" for="constructor-size40">40cm</label>
                   </div>
-                  <div>
-                    <input type="radio" name="constructor__pizzaSize" id="constructor-size50" data-name="01-50cm"
-                      class="constructor__pizzaSize">
-                    <label for="constructor-size50">50cm</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSize" data-type="constructor__customCheckbox"
+                      id="constructor-size50" data-name="01-50cm" class="constructor__pizzaSize">
+                    <label data-type="constructor__customInpLabel" for="constructor-size50">50cm</label>
                   </div>
                 </div>
               </div>
               <div class="constructor__formItem">
                 <div class="constructor__formItemTitle">Select the souce</div>
                 <div class="form__inputContainer">
-                  <div>
-                    <input type="radio" name="constructor__pizzaSouce" id="constructor-souceBBQ" data-name="02-bbq"
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSouce" data-type="constructor__customCheckbox"
+                      id="constructor-souceBBQ" data-name="02-bbq"
                       class="constructor__pizzaSouce constructor__imgOption" checked>
-                    <label for="constructor-souceBBQ">BBQ sauce</label>
+                    <label data-type="constructor__customInpLabel" for="constructor-souceBBQ">BBQ sauce</label>
                   </div>
-                  <div>
-                    <input type="radio" name="constructor__pizzaSouce" id="constructor-soucePesto" data-name="02-pesto"
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSouce" data-type="constructor__customCheckbox"
+                      id="constructor-soucePesto" data-name="02-pesto"
                       class="constructor__pizzaSouce constructor__imgOption">
-                    <label for="constructor-soucePesto">Pesto sauce</label>
+                    <label data-type="constructor__customInpLabel" for="constructor-soucePesto">Pesto sauce</label>
                   </div>
-                  <div>
-                    <input type="radio" name="constructor__pizzaSouce" id="constructor-souceTomato"
-                      data-name="02-tomato" class="constructor__pizzaSouce constructor__imgOption">
-                    <label for="constructor-souceTomato">Tomato sauce</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="constructor__pizzaSouce" id="constructor-whiteSouce" data-name="02-white"
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSouce" data-type="constructor__customCheckbox"
+                      id="constructor-souceTomato" data-name="02-tomato"
                       class="constructor__pizzaSouce constructor__imgOption">
-                    <label for="constructor-whiteSouce">White sauce</label>
+                    <label data-type="constructor__customInpLabel" for="constructor-souceTomato">Tomato sauce</label>
+                  </div>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="radio" name="constructor__pizzaSouce" data-type="constructor__customCheckbox"
+                      id="constructor-whiteSouce" data-name="02-white"
+                      class="constructor__pizzaSouce constructor__imgOption">
+                    <label data-type="constructor__customInpLabel" for="constructor-whiteSouce">White sauce</label>
                   </div>
                 </div>
               </div>
               <div class="constructor__formItem">
                 <div class="constructor__formItemTitle">Select the pizza topping</div>
                 <div class="form__inputContainer">
-                  <div>
-                    <input type="checkbox" id="bacon" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="03-bacon">
-                    <label for="bacon">Bacon</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="bacon" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="03-bacon">
+                    <label data-type="constructor__customInpLabel" for="bacon">Bacon</label>
                   </div>
 
-                  <div>
-                    <input type="checkbox" id="salami" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="03-salami">
-                    <label for="salami">Salami</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="salami" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="03-salami">
+                    <label data-type="constructor__customInpLabel" for="salami">Salami</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="broccoli" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="04-broccoli">
-                    <label for="broccoli">Broccoli</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="broccoli" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="04-broccoli">
+                    <label data-type="constructor__customInpLabel" for="broccoli">Broccoli</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="mushrooms" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="04-mushrooms">
-                    <label for="mushrooms">Mushrooms</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="mushrooms" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="04-mushrooms">
+                    <label data-type="constructor__customInpLabel" for="mushrooms">Mushrooms</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="pineapples" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="04-pineapples">
-                    <label for="pineapples">Pineapples</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="pineapples" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="04-pineapples">
+                    <label data-type="constructor__customInpLabel" for="pineapples">Pineapples</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="tomatoes" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="04-tomatoes">
-                    <label for="tomatoes">Tomatoes</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="tomatoes" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="04-tomatoes">
+                    <label data-type="constructor__customInpLabel" for="tomatoes">Tomatoes</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="black-olives" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="06-black-olives">
-                    <label for="black-olives">Black olives</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="black-olives" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="06-black-olives">
+                    <label data-type="constructor__customInpLabel" for="black-olives">Black olives</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="green-peppers" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="05-green-peppers">
-                    <label for="green-peppers">Green peppers</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="green-peppers" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="05-green-peppers">
+                    <label data-type="constructor__customInpLabel" for="green-peppers">Green peppers</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="onions" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="05-onions">
-                    <label for="onions">Onions</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="onions" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="05-onions">
+                    <label data-type="constructor__customInpLabel" for="onions">Onions</label>
                   </div>
-                  <div>
-                    <input type="checkbox" id="spinach" class="constructor__pizzaIngred constructor__imgOption"
-                      data-name="06-spinach">
-                    <label for="spinach">Spinach</label>
+                  <div class="constructor__customCheckboxContainer">
+                    <input type="checkbox" id="spinach" data-type="constructor__customCheckbox"
+                      class="constructor__pizzaIngred constructor__imgOption" data-name="06-spinach">
+                    <label data-type="constructor__customInpLabel" for="spinach">Spinach</label>
                   </div>
                 </div>
               </div>
@@ -751,7 +755,8 @@
               <div>11:30 am - 10:30 pm</div>
             </div>
           </div>
-          <div class="reservation__callToAction">Book your table for lunch or dinner</div>
+          <div class="reservation__callToAction">Book your table for lunch or dinner (11.00 - 19.59)
+          </div>
           <form class="reservation__form">
             <div class="reservation__formDiv">
               <label for="reserv-form-name">Name:</label>
@@ -764,7 +769,7 @@
             <div class="reservation__formDiv reservation__formDiv--flex">
               <label for="reserv-form-peopleNum">People Number:</label>
               <input class="reservation__input--flex" type="number" min="1" max="20" id="reserv-form-peopleNum"
-                required>
+                value="1" required>
             </div>
             <div class="reservation__formDiv reservation__formDiv--flex">
               <label for="reserv-form-date">Date & Time:</label>

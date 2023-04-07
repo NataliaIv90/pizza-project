@@ -55,7 +55,6 @@ function updateCart() {
   if (cart.length > 0) {
     cartFull.classList.remove("hidden");
     cartEmpty.classList.add("hidden");
-    // cartConfirmBtn.classList.remove("hidden");
     promoApplied = false;
     headerCartList.innerHTML = `        
   <li class="header__cartListItem">
@@ -72,8 +71,8 @@ function updateCart() {
       li.classList.add("header__cartListItem");
       li.innerHTML = `     
       <div class="cart__productName">${el[0]}</div>
-      <div class="cart__productQuantity">${el[2]}</div>
-      <div>$<span class="cart__productSum">${el[1]}</span></div>
+        <div class="cart__productQuantity">${el[2]}</div>
+       <div>$<span class="cart__productSum">${el[1]}</span></div>
        <div>$<span class="cart__productSumTotal">${el[1] * el[2]}</span></div>`;
       headerCartList.insertAdjacentElement("beforeend", li);
     })
@@ -91,8 +90,6 @@ function updateCart() {
 
     cartFull.classList.add("hidden");
     cartEmpty.classList.remove("hidden");
-    // headerCartList.classList.add("hidden");
-    // cartConfirmBtn.classList.add("hidden");
   }
   updateCartNum();
   updateCartTotalSum();
@@ -100,11 +97,14 @@ function updateCart() {
 
 cartConfirmBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  headerCartDiv.classList.add("header__cart--hidden");
   cart = [];
   updateCart();
-  Swal.fire({
-    title: 'Thank you for your order!'
-  })
+  setTimeout(function () {
+    Swal.fire({
+      title: 'Thank you for your order!'
+    })
+  }, 300)
 })
 
 function updateCartTotalSum() {
@@ -178,23 +178,24 @@ const menuBackgroundImages = {
 }
 
 function increaseAmount() {
-  this.nextElementSibling.innerText = this.nextElementSibling.innerText * 1 + 1;
+  this.previousElementSibling.innerText = this.previousElementSibling.innerText * 1 + 1;
 }
 
 function decreaseAmount() {
-  if (this.previousElementSibling.innerText * 1 > 1) {
-    this.previousElementSibling.innerText = this.previousElementSibling.innerText * 1 - 1;
+  if (this.nextElementSibling.innerText * 1 > 1) {
+    this.nextElementSibling.innerText = this.nextElementSibling.innerText * 1 - 1;
   }
 }
 
 menuSelectAmountContainers.forEach(el => {
-  el.innerHTML = `      <div class="menu__changeAmountBtn menu__increaseAmount">+</div>
-                <div class="menu__amount">1</div>
-                <div class="menu__changeAmountBtn menu__decreaseAmount">-</div>`;
+  el.innerHTML = `    <div class="menu__changeAmountBtn menu__decreaseAmount">-</div>
+     <div class="menu__amount">1</div>
+     <div class="menu__changeAmountBtn menu__increaseAmount">+</div>`;
 })
 
 let increaseBtn = document.querySelectorAll(".menu__increaseAmount");
 let decreaseBtn = document.querySelectorAll(".menu__decreaseAmount");
+
 
 increaseBtn.forEach(el => {
   el.addEventListener("click", increaseAmount);
@@ -389,6 +390,7 @@ function toggleImage() {
   }
   constrImagesSelector.forEach(el => {
     // if (el.checked) {
+
     constrImages.forEach(imgEl => {
       if (el.checked && imgEl.getAttribute("data-name") == el.getAttribute("data-name")) {
         imgEl.classList.remove("hidden");
@@ -453,6 +455,7 @@ function submitCustomPizza(e) {
     constrImages[i].classList.add("hidden");
   }
   updateTotalPrice();
+  toggleCustomInput();
 }
 
 // Добавляю відгуки в розділ review
@@ -656,9 +659,74 @@ for (let i = 0; i < staffArr.length; i++) {
   staffCards.insertAdjacentElement("beforeend", div);
 }
 
+// Registration customPizzaForm
 document.querySelector(".reservation__form").addEventListener("submit", (e) => {
   e.preventDefault();
-  Swal.fire({
-    title: 'We received your booking. Thank you for chosing us!'
-  });
+  const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/,
+    dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+  const nameInput = document.getElementById("reserv-form-name"),
+    peopleNumInput = document.getElementById("reserv-form-peopleNum"),
+    dateInput = document.getElementById("reserv-form-date"),
+    timeInput = document.getElementById("reserv-form-time");
+
+  const nameIsValid = nameInput.value !== "";
+  const peopleNumIsValid = peopleNumInput.value >= 1 && peopleNumInput.value <= 20;
+  const dateIsValid = dateRegex.test(dateInput.value);
+  const timeIsValid = timeRegex.test(timeInput.value);
+
+  console.log(dateInput.value);
+  const today = new Date();
+  const selectedDate = new Date(dateInput.value);
+  const dateIsNotLessThanToday = selectedDate >= today;
+
+  const selectedTime = new Date(`1970-01-01T${timeInput.value}`);
+  const selectedTimeHours = selectedTime.getHours();
+  const bookingTableIsValid = ((selectedTimeHours > 11) && (selectedTimeHours < 19));
+
+
+  if (!nameIsValid) {
+    alert("Name is not valid");
+  } else if (!peopleNumIsValid) {
+    alert("People number is not valid");
+  } else if (!dateIsValid) {
+    alert("Date is not valid");
+  } else if (!timeIsValid || !dateIsNotLessThanToday) {
+    alert("Time is not valid");
+  } else if (!bookingTableIsValid) {
+    alert("This time is not available for booking. Choose other time.");
+  } else {
+    Swal.fire({
+      title: 'We received your booking. Thank you for chosing us!'
+    });
+  }
+});
+
+
+// custom checkbox
+
+const customInputs = document.querySelectorAll('[data-type="constructor__customCheckbox"]');
+customInputs.forEach(el => {
+  let span = document.createElement("span");
+  span.classList.add("constructor__customCheckboxSpan");
+  span.setAttribute("data-type", "constructor-customCheckbox");
+  if (el.checked == true) {
+    span.classList.add("constructor__customCheckboxSpan--checked");
+  }
+  span.addEventListener("click", () => {
+    el.click();
+    toggleCustomInput();
+  })
+  el.insertAdjacentElement("beforebegin", span);
+  el.addEventListener("change", toggleCustomInput);
 })
+
+function toggleCustomInput() {
+  customInputs.forEach(el => {
+    if (el.checked == true) {
+      el.previousElementSibling.classList.add("constructor__customCheckboxSpan--checked");
+    } else {
+      el.previousElementSibling.classList.remove("constructor__customCheckboxSpan--checked");
+    }
+  })
+}

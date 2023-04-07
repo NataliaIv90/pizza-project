@@ -143,6 +143,7 @@ body .dark-theme {
   height: 1.2rem;
   display: flex;
   justify-content: center;
+  color: var(--dark-font-color);
 }
 
 .header__cart {
@@ -194,8 +195,8 @@ body .dark-theme {
 
 .header__cartListItem {
   display: grid;
-  gap: 10px;
-  grid-template-columns: 480px 60px 40px 40px 20px;
+  gap: 15px;
+  grid-template-columns: 460px 60px 40px 40px 20px;
 }
 
 .cart__closeBtn {
@@ -284,6 +285,7 @@ body .dark-theme {
 
 .hero__orderBtnContainer {
   margin-bottom: 10%;
+  animation: zoomElement 2s ease-in-out infinite;
 }
 
 .hero__orderBtn {
@@ -296,6 +298,7 @@ body .dark-theme {
   color: var(--light-font-color);
   box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.7);
   transition: all 0.2s;
+
 }
 
 .hero__orderBtn:hover {
@@ -551,6 +554,37 @@ body .dark-theme {
   display: flex;
   justify-content: flex-start;
   gap: 20px;
+}
+
+.constructor__customCheckboxSpan {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.5px solid var(--border-color);
+}
+
+.constructor__customCheckboxSpan:hover {
+  cursor: pointer;
+}
+
+.constructor__customCheckboxSpan--checked {
+  background-color: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+input[data-type="constructor__customCheckbox"] {
+  width: 0px;
+  height: 0px;
+}
+
+label[data-type="constructor__customInpLabel"]:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.constructor__customCheckboxContainer {
+  display: flex;
+  align-items: center;
 }
 
 .constructor__text {
@@ -1264,9 +1298,11 @@ body .dark-theme {
 
   .hero {
     margin-top: 30px;
-    display: block;
-    height: auto;
+    display: flex;
     padding: 5%;
+    min-height: 70vh;
+    justify-content: center;
+    align-items: center;
   }
 
   .hero__content {
