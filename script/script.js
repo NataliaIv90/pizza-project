@@ -663,6 +663,7 @@ for (let i = 0; i < staffArr.length; i++) {
 document.querySelector(".reservation__form").addEventListener("submit", (e) => {
   e.preventDefault();
   const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/,
+    nameRegex = /^[A-Z]{1,}$/i,
     dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
   const nameInput = document.getElementById("reserv-form-name"),
@@ -670,7 +671,7 @@ document.querySelector(".reservation__form").addEventListener("submit", (e) => {
     dateInput = document.getElementById("reserv-form-date"),
     timeInput = document.getElementById("reserv-form-time");
 
-  const nameIsValid = nameInput.value !== "";
+  const nameIsValid = nameInput.value !== "" && nameRegex.test(nameInput.value);
   const peopleNumIsValid = peopleNumInput.value >= 1 && peopleNumInput.value <= 20;
   const dateIsValid = dateRegex.test(dateInput.value);
   const timeIsValid = timeRegex.test(timeInput.value);
