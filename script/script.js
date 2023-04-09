@@ -664,17 +664,20 @@ document.querySelector(".reservation__form").addEventListener("submit", (e) => {
   e.preventDefault();
   const timeRegex = /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/,
     nameRegex = /^[A-Z]{1,}$/i,
+    mailRegex = /^([A-Z]|(0-9)){1,}[@][A-Z]{1,}[.][A-Z]{1,}$/i,
     dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 
   const nameInput = document.getElementById("reserv-form-name"),
     peopleNumInput = document.getElementById("reserv-form-peopleNum"),
     dateInput = document.getElementById("reserv-form-date"),
+    mailInput = document.getElementById("reserv-form-email"),
     timeInput = document.getElementById("reserv-form-time");
 
   const nameIsValid = nameInput.value !== "" && nameRegex.test(nameInput.value);
   const peopleNumIsValid = peopleNumInput.value >= 1 && peopleNumInput.value <= 20;
   const dateIsValid = dateRegex.test(dateInput.value);
   const timeIsValid = timeRegex.test(timeInput.value);
+  const mailIsValid = mailRegex.test(mailInput.value);
 
   console.log(dateInput.value);
   const today = new Date();
@@ -689,13 +692,30 @@ document.querySelector(".reservation__form").addEventListener("submit", (e) => {
   if (!nameIsValid) {
     alert("Name is not valid");
   } else if (!peopleNumIsValid) {
-    alert("People number is not valid");
-  } else if (!dateIsValid) {
-    alert("Date is not valid");
-  } else if (!timeIsValid || !dateIsNotLessThanToday) {
-    alert("Time is not valid");
+    Swal.fire({
+      title: "People number is not valid",
+      confirmButtonText: 'Ok'
+    });
+  } else if (!dateIsValid || !dateIsNotLessThanToday) {
+    Swal.fire({
+      title: "Date is not valid",
+      confirmButtonText: 'Ok'
+    });
+  } else if (!timeIsValid) {
+    Swal.fire({
+      title: "Time is not valid",
+      confirmButtonText: 'Ok'
+    });
   } else if (!bookingTableIsValid) {
-    alert("This time is not available for booking. Choose other time.");
+    Swal.fire({
+      title: "This time is not available for booking. Choose other time.",
+      confirmButtonText: 'Ok'
+    });
+  } else if (!mailIsValid) {
+    Swal.fire({
+      title: "Email is not valid",
+      confirmButtonText: 'Ok'
+    });
   } else {
     Swal.fire({
       title: 'We received your booking. Thank you for chosing us!'
