@@ -161,6 +161,8 @@ body .dark-theme {
   right: 3%;
   transition: all 0.2s;
   padding: 20px;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .header__cart--hidden {
